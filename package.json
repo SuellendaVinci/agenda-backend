@@ -1,0 +1,10 @@
+{
+  "name": "agenda-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Suellen Camargo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
