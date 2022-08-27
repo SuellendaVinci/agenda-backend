@@ -4,6 +4,4 @@ WORKDIR /server
 
 COPY . . 
 
-RUN yarn 
-
-CMD ["yarn", "start"]
+RUN apk update && apk add bash
