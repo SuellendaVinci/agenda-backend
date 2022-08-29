@@ -5,8 +5,8 @@ services:
     image: postgres:14.5-alpine
     container_name: db
     environment:
-      - POSTGRES_USER-postgres
-      - POSTGRES_PASSWORD-postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=agenda_db
     tty: true
     networks:
@@ -25,9 +25,11 @@ services:
       - "3333:3333"
     restart: always
     tty: true
-    command: bash -c "while i</dev/tcp/db/5432; do sleep 1; done; yarn && yarn start"
+    command: bash -c "while !</dev/tcp/db/5432; do sleep 1; done; yarn && yarn start"
     networks:
       - backend_network
+    volumes:
+      - ./server 
     depends_on:
       - db
 networks:
